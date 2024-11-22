@@ -21,11 +21,12 @@ public class FirstProgram {
 		driversList.put("chrome", new ChromeDriver());
 		driversList.put("edge", new EdgeDriver());
 		driversList.put("firefox", new FirefoxDriver());
-		
+
+		//Using different browsers
 		for(String browser : driversList.keySet()) {
 			WebDriver driver = driversList.get(browser);
 			System.out.println("Browser: " + browser);
-			
+
 			//Navigating to URL
 			String url = "https://demo.aeries.net/aeries/Login.aspx?demo=True&user=admin&pwd=admin";
 			driver.get(url);
@@ -37,10 +38,10 @@ public class FirstProgram {
 			String pageUrl = driver.getCurrentUrl();
 			System.out.println(pageUrl);
 			if(url.equals(pageUrl)) System.out.println("URL matching successfully!");
-			
+
 			//Quitting the driver
 			driver.quit();
-		}		
+		}
 	}
 
 }
